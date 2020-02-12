@@ -1,0 +1,7 @@
+-   id: hello_world
+    name: Hello World Hook
+    description: First test of pre-commit
+    entry: hello_world
+    language: python
+    args: [-i]
+
