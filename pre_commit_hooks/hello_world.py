@@ -1,6 +1,6 @@
 
 
-def main() -> int:
+def main():
     print("Hello telus POC")
     retv = 0 
     if(false):
