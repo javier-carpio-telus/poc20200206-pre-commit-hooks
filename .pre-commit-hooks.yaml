@@ -3,4 +3,9 @@
     description: First test of pre-commit
     entry: hello_world
     language: python
+-   id: poc_precommit_pmd
+    name: POC Pre-Commit PMD hook
+    description: Executo PMD hooks to validate Java code
+    entry: poc_precommit_pmd
+    language: python
 
