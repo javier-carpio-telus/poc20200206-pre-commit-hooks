@@ -8,4 +8,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     return retv
 
 
+f __name__ == '__main__':
+    exit(main())
 
