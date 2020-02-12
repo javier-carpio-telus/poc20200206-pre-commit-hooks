@@ -3,7 +3,7 @@
 def main():
     print("Hello telus POC")
     retv = 0 
-    if(false):
+    if(False):
         retv = 1
     return retv
 
