@@ -9,7 +9,7 @@ def main():
     print("Starting PMD validations...")
     print()
     pmd_bin_path = "/apps/infra/precommit/pmd-bin-6.22.0-SNAPSHOT/bin"
-    command = "cd /apps/infra/precommit/poc-pipeline202002 && {}/run.sh pmd -cache -d java-web-project/src/ -R .pmd_rulset.xml".format(pmd_bin_path)
+    command = "cd /apps/infra/precommit/poc-pipeline202002 && {}/run.sh pmd -cache .pmd_cache -d java-web-project/src/ -R .pmd_rulset.xml".format(pmd_bin_path)
     
     pmd_stream = os.system(command)
     #pmd_output = pmd_stream.read()
