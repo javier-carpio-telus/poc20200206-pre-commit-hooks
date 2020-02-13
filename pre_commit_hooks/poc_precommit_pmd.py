@@ -7,13 +7,15 @@ def main():
     
     pmd_bin_path = "/apps/infra/precommit/pmd-bin-6.22.0-SNAPSHOT/bin"
     
-    pmd_result = os.system("cd /apps/infra/precommit/poc-pipeline202002 && %d pmd -d java-web-project/src/ -R .pmd_rulset.xml" % pmd_bin_path)
-    
+    pmd_stream = os.system("cd /apps/infra/precommit/poc-pipeline202002 && {} pmd -d java-web-project/src/ -R .pmd_rulset.xml".format(pmd_bin_path))
+    pmd_output = pmd_stream.read()
 
     retv = 0
-    if(pmd_result != 0):
-        print("Execution returned code %d" % pmd_result)
+    if(pmd_stream != 0):
+        print("Execution returned code {}".format(pmd_stream))
+        print(pmd_output)
         retv = 1 # Error code 1
+    print("*****************************************")
     return retv
 
 
