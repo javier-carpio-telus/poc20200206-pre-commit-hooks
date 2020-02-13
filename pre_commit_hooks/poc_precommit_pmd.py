@@ -7,7 +7,7 @@ def main():
     
     pmd_bin_path = "/apps/infra/precommit/pmd-bin-6.22.0-SNAPSHOT/bin"
     
-    pmd_stream = os.system("cd /apps/infra/precommit/poc-pipeline202002 && {} pmd -d java-web-project/src/ -R .pmd_rulset.xml".format(pmd_bin_path))
+    pmd_stream = os.system("cd /apps/infra/precommit/poc-pipeline202002 && {}/run.sh pmd -d java-web-project/src/ -R .pmd_rulset.xml".format(pmd_bin_path))
     pmd_output = pmd_stream.read()
 
     retv = 0
