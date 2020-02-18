@@ -2,7 +2,7 @@ import os
 import argparse
 import sys, getopt
 
-def main(argv): 
+def main(): 
 
     pmd_bin_path = "/apps/infra/precommit/pmd-bin-6.22.0-SNAPSHOT/bin"
     workdir = "/apps/infra/precommit/poc-pipeline202002"
@@ -43,6 +43,6 @@ def main(argv):
 
 
 if __name__ == '__main__':
-    exit(main(sys.argv[1:]))
+    exit(main())
 
 
