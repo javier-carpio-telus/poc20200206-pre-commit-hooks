@@ -1,7 +1,8 @@
 import os
 import argparse
+import sys, getopt
 
-def main(argv=None): ## Hacer que imprima los resultados aunque sea success
+def main(argv): 
 
     print(argv)
     pmd_bin_path = "/apps/infra/precommit/pmd-bin-6.22.0-SNAPSHOT/bin"
@@ -10,7 +11,7 @@ def main(argv=None): ## Hacer que imprima los resultados aunque sea success
     parser.add_argument('filenames', nargs='*')
     args = parser.parse_args(argv)
 
-    print()
+    print("")
     print("*****************************************")
     print("***** POC Pre-commit/PMD java hooks *****")
     print("*****************************************")
@@ -42,6 +43,6 @@ def main(argv=None): ## Hacer que imprima los resultados aunque sea success
 
 
 if __name__ == '__main__':
-    exit(main())
+    exit(main(sys.argv[1:]))
 
 
