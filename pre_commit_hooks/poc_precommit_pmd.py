@@ -4,12 +4,8 @@ import sys, getopt
 
 def main(argv): 
 
-    print(argv)
     pmd_bin_path = "/apps/infra/precommit/pmd-bin-6.22.0-SNAPSHOT/bin"
     workdir = "/apps/infra/precommit/poc-pipeline202002"
-    #parser = argparse.ArgumentParser()
-    #parser.add_argument('filenames', nargs='*')
-    #args = parser.parse_args(argv)
 
     print("")
     print("*****************************************")
@@ -21,6 +17,10 @@ def main(argv):
 
 
 
+    print(str(sys.argv))
+    #parser = argparse.ArgumentParser()
+    #parser.add_argument('filenames', nargs='*')
+    #args = parser.parse_args(argv)
 
     #for filename in args.filenames:
     #    print("Filename {}, args: {}".format(filename, args))
