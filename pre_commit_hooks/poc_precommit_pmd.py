@@ -18,12 +18,18 @@ def main():
 
 
     print(str(sys.argv))
+    args = sys.argv[:1]
+    print(str(args))
+
+    for filename in args.filenames:
+        print("Filename {}, args: {}".format(filename, args))
+
+
+
     #parser = argparse.ArgumentParser()
     #parser.add_argument('filenames', nargs='*')
     #args = parser.parse_args(argv)
 
-    #for filename in args.filenames:
-    #    print("Filename {}, args: {}".format(filename, args))
 
     command = "cd {} && {}/run.sh pmd -cache .pmd_cache -d **/src/ -R .pmd_rulset.xml".format(workdir, pmd_bin_path)
     
