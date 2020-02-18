@@ -1,7 +1,7 @@
 import os
 import argparse
 
-def main(argv=None):
+def main(argv=None): ## Hacer que imprima los resultados aunque sea success
 
     print(argv)
     pmd_bin_path = "/apps/infra/precommit/pmd-bin-6.22.0-SNAPSHOT/bin"
