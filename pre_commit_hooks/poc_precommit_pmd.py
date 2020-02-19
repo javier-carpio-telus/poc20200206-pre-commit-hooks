@@ -27,7 +27,7 @@ def main():
             print("** Validating java hooks in file \"{}\" marked to commit.".format(filename))
             command = "cd {} && {}/run.sh pmd -cache .pmd_cache -d {} -R .pmd_rulset.xml".format(workdir, pmd_bin_path, filename)
             pmd_stream = os.system(command)
-        else
+        else:
             print("** Skipping file \"{}\" marked to commit.".format(filename))
 
     
