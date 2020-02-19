@@ -22,9 +22,14 @@ def main():
     #print(str(args))
 
     for i in range(1, len(sys.argv)):
-        print("** Validating file \"{}\" marked to commit.".format(sys.argv[i]))
-        command = "cd {} && {}/run.sh pmd -cache .pmd_cache -d {} -R .pmd_rulset.xml".format(workdir, pmd_bin_path, sys.argv[i])
-        pmd_stream = os.system(command)
+        filename = sys.argv[i]
+        if filename.endswith(".java") or filename.endswith(".jar"):
+            print("** Validating java hooks in file \"{}\" marked to commit.".format(filename))
+            command = "cd {} && {}/run.sh pmd -cache .pmd_cache -d {} -R .pmd_rulset.xml".format(workdir, pmd_bin_path, filename)
+            pmd_stream = os.system(command)
+        else
+            print("** Skipping file \"{}\" marked to commit.".format(filename))
+
     
     #pmd_output = pmd_stream.read()
 
