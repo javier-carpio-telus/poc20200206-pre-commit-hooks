@@ -26,6 +26,7 @@ def main():
         if filename.endswith(".java") or filename.endswith(".jar"):
             print("** Validating java hooks in file \"{}\" marked to commit.".format(filename))
             command = "cd {} && {}/run.sh pmd -cache .pmd_cache -d {} -R .pmd_rulset.xml".format(workdir, pmd_bin_path, filename)
+            print("** Executing command `{}`".format(command))
             pmd_stream = os.system(command)
         else:
             print("** Skipping file \"{}\" marked to commit.".format(filename))
