@@ -17,23 +17,15 @@ def main():
 
 
 
-    print(str(sys.argv))
-    args = sys.argv[:1]
-    print(str(args))
+    #print(str(sys.argv))
+    #args = sys.argv[:1]
+    #print(str(args))
 
-    for filename in args.filenames:
-        print("Filename {}, args: {}".format(filename, args))
-
-
-
-    #parser = argparse.ArgumentParser()
-    #parser.add_argument('filenames', nargs='*')
-    #args = parser.parse_args(argv)
-
-
-    command = "cd {} && {}/run.sh pmd -cache .pmd_cache -d **/src/ -R .pmd_rulset.xml".format(workdir, pmd_bin_path)
+    for i in range(1, len(sys.argv)):
+        print("** Validating file \"{}\" marked to commit.".format(sys.argv[i]))
+        command = "cd {} && {}/run.sh pmd -cache .pmd_cache -d {} -R .pmd_rulset.xml".format(workdir, pmd_bin_path, sys.argv[i])
+        pmd_stream = os.system(command)
     
-    pmd_stream = os.system(command)
     #pmd_output = pmd_stream.read()
 
     retv = 0
