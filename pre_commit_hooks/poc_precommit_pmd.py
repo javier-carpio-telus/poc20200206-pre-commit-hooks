@@ -5,7 +5,7 @@ import sys, getopt
 def main(): 
 
     pmd_bin_path = "/apps/infra/precommit/pmd-bin-6.22.0-SNAPSHOT/bin"
-    workdir = "/apps/infra/precommit/poc-pipeline202002"
+    workdir = "/apps/infra/actions-runner/_work/fifa-training-sandbox2/fifa-training-sandbox2"
 
     print("")
     print("*****************************************")
