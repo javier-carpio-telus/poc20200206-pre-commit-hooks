@@ -8,9 +8,9 @@ def main():
     workdir = "/apps/infra/actions-runner/_work/fifa-training-sandbox2/fifa-training-sandbox2"
 
     print("")
-    print("*****************************************")
-    print("***** POC Pre-commit/PMD java hooks *****")
-    print("*****************************************")
+    print("***************************************************")
+    print("********** POC Pre-commit/PMD java hooks **********")
+    print("***************************************************")
     print("")
     print("Starting PMD validations...")
     print("")
@@ -21,6 +21,8 @@ def main():
     #args = sys.argv[:1]
     #print(str(args))
 
+    retv = 0
+    pmd_steam = 0
     for i in range(1, len(sys.argv)):
         filename = sys.argv[i]
         if filename.endswith(".java") or filename.endswith(".jar"):
@@ -28,20 +30,23 @@ def main():
             command = "cd {} && {}/run.sh pmd -cache .pmd_cache -d {} -R .pmd_rulset.xml".format(workdir, pmd_bin_path, filename)
             print("** Executing command `{}`".format(command))
             pmd_stream = os.system(command)
+            print("Execution returned code {}".format(pmd_stream))
+            if(retv == 0 && pmd_stream != 0): retv = pmd_stream
         else:
             print("** Skipping file \"{}\" marked to commit.".format(filename))
 
     
     #pmd_output = pmd_stream.read()
 
-    retv = 0
     if(pmd_stream != 0):
         print("")
-        print("Execution returned code {}".format(pmd_stream))
         #print(pmd_output)
         retv = 1 # Error code 1
     print("")
-    print("*****************************************")
+    print("***************************************************")
+    print("Finishing PMD execution. For more information about")
+    print("PMD Hooks visit https://pmd.github.io/latest/pmd_rules_java.html")
+    print("***************************************************")
     print("")
     return retv
 
