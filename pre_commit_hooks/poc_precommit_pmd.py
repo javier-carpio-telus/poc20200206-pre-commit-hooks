@@ -31,7 +31,7 @@ def main():
             print("** Executing command `{}`".format(command))
             pmd_stream = os.system(command)
             print("Execution returned code {}".format(pmd_stream))
-            if(retv == 0 && pmd_stream != 0): retv = pmd_stream
+            if(retv == 0 and pmd_stream != 0): retv = pmd_stream
         else:
             print("** Skipping file \"{}\" marked to commit.".format(filename))
 
