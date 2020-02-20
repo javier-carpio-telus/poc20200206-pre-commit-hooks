@@ -22,7 +22,7 @@ def main():
     #print(str(args))
 
     retv = 0
-    pmd_steam = 0
+    pmd_stream = 0
     for i in range(1, len(sys.argv)):
         filename = sys.argv[i]
         if filename.endswith(".java") or filename.endswith(".jar"):
